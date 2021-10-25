@@ -3,8 +3,10 @@ var textArea = document.querySelector("textarea");
 var now = moment();
 // var displayText = displaymessage();
 
-var userContent = [];
-
+// var userContent = [];
+document.getElementById("textarea").innerHTML =
+  localStorage.getItem("textDisplayInfo");
+// userContent.push(textAreaText);
 // return getItem to display
 
 timeDisplay = moment().format("HH:mm");
@@ -17,7 +19,7 @@ saveBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
   var textDisplayInfo = textArea.value;
-  console.log(textDisplayInfo);
+  console.log("text value", textDisplayInfo);
 
   localStorage.setItem("textDisplayInfo", textDisplayInfo);
   //   renderlastRegistered();
@@ -33,6 +35,7 @@ function renderTextDisplay() {
 
   if (savedDisplay !== null) {
     userContent = savedDisplay;
+    console.log("user content info", userContent);
   } else {
     return;
   }
