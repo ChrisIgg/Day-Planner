@@ -45,7 +45,7 @@ document.getElementById("textarea2").innerHTML =
 saveBtn2.addEventListener("click", function (event) {
   event.preventDefault();
 
-  var textDisplayInfo2 = textArea2.value;
+  var textDisplayInfo2 = textarea2.value;
   console.log("text value", textDisplayInfo2);
 
   localStorage.setItem("textDisplayInfo2", textDisplayInfo2);
