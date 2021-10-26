@@ -1,19 +1,15 @@
 var saveBtn = document.querySelector(".saveBtn");
 var textArea = document.querySelector("textarea");
 var now = moment();
-// var displayText = displaymessage();
+var timeDisplay = 
 
-// var userContent = [];
 document.getElementById("textarea").innerHTML =
   localStorage.getItem("textDisplayInfo");
-// userContent.push(textAreaText);
-// return getItem to display
 
 timeDisplay = moment().format("HH:mm");
 
-$("#currentDay").text(now.format("MMMM D YYYY"));
 
-// textArea.addEventListener();
+$("#currentDay").text(now.format("MMMM D YYYY"));
 
 saveBtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -22,14 +18,12 @@ saveBtn.addEventListener("click", function (event) {
   console.log("text value", textDisplayInfo);
 
   localStorage.setItem("textDisplayInfo", textDisplayInfo);
-  //   renderlastRegistered();
   console.log(localStorage);
 });
 
 function init() {
   renderTextDisplay();
 }
-
 function renderTextDisplay() {
   var savedDisplay = localStorage.getItem("textDisplayInfo");
 
@@ -40,21 +34,22 @@ function renderTextDisplay() {
     return;
   }
 }
-
 init();
-// clear text area on start of function
-// once saved, recall from local storage and keep in textArea
 
-// function displayMessage(type, message)
-// function displayMessage(type, message) {
-//     msgDiv.textContent = message;
-//     msgDiv.setAttribute("class", type);
-//   }
+// var saveBtn = document.querySelector(".saveBtn");
+// var textArea = document.querySelector("textarea");
+// document.getElementById("textarea").innerHTML =
+//   localStorage.getItem("textDisplayInfo");
+// saveBtn.addEventListener("click", function (event) {
+//   event.preventDefault();
 
-// go from saveBtn click starts process
-// function looks at input info (if nothing there, return nothing)
-// if something there save in local storage
-// get'er from local storage (empty parentheticals and ""?)
+//   var textDisplayInfo = textArea.value;
+//   console.log("text value", textDisplayInfo);
+
+//   localStorage.setItem("textDisplayInfo", textDisplayInfo);
+//   console.log(localStorage);
+// });
+
 // side panel area (?) with append with local storage content
 
 // return HH:mm
