@@ -42,25 +42,39 @@ function renderTextDisplay() {
 }
 
 init();
-// clear text area on start of function
-// once saved, recall from local storage and keep in textArea
 
-// function displayMessage(type, message)
-// function displayMessage(type, message) {
-//     msgDiv.textContent = message;
-//     msgDiv.setAttribute("class", type);
-//   }
+var saveBtn2 = document.querySelector(".saveBtn2");
+var textArea2 = document.querySelector("textarea2");
+var now = moment();
+// var displayText = displaymessage();
 
-// go from saveBtn click starts process
-// function looks at input info (if nothing there, return nothing)
-// if something there save in local storage
-// get'er from local storage (empty parentheticals and ""?)
-// side panel area (?) with append with local storage content
+// var userContent = [];
+document.getElementById("textarea2").innerHTML =
+  localStorage.getItem("textDisplayInfo2");
 
-// return HH:mm
-// transfer to unix?
-// // if unix is below unix of panel (panel must equal or < unix at last panel minute)
-// Date.prototype.getHours()
-// Returns the hour (0–23) in the specified date according to local time.
+saveBtn2.addEventListener("click", function (event) {
+  event.preventDefault();
 
-// rows have signifier of time (0-1) if .getHours is equal to signifier of panel, then make blue.  If < than signifier of .get hours, make grey. if <make green
+  var textDisplayInfo2 = textArea2.value;
+  console.log("text value", textDisplayInfo2);
+
+  localStorage.setItem("textDisplayInfo2", textDisplayInfo2);
+  console.log(localStorage);
+});
+
+function init2() {
+  renderTextDisplay2();
+}
+
+function renderTextDisplay2() {
+  var savedDisplay2 = localStorage.getItem("textDisplayInfo2");
+
+  if (savedDisplay2 !== null) {
+    userContent2 = savedDisplay2;
+    console.log("user content info2", userContent2);
+  } else {
+    return;
+  }
+}
+
+init2();
