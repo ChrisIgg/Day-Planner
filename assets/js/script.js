@@ -1,19 +1,12 @@
 var saveBtn = document.querySelector(".saveBtn");
 var textArea = document.querySelector("textarea");
 var now = moment();
-// var displayText = displaymessage();
-
-// var userContent = [];
-document.getElementById("textarea").innerHTML =
-  localStorage.getItem("textDisplayInfo");
-// userContent.push(textAreaText);
-// return getItem to display
+var timeDisplay = (document.getElementById("textarea").innerHTML =
+  localStorage.getItem("textDisplayInfo"));
 
 timeDisplay = moment().format("HH:mm");
 
 $("#currentDay").text(now.format("MMMM D YYYY"));
-
-// textArea.addEventListener();
 
 saveBtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -22,14 +15,12 @@ saveBtn.addEventListener("click", function (event) {
   console.log("text value", textDisplayInfo);
 
   localStorage.setItem("textDisplayInfo", textDisplayInfo);
-  //   renderlastRegistered();
   console.log(localStorage);
 });
 
 function init() {
   renderTextDisplay();
 }
-
 function renderTextDisplay() {
   var savedDisplay = localStorage.getItem("textDisplayInfo");
 
@@ -40,7 +31,6 @@ function renderTextDisplay() {
     return;
   }
 }
-
 init();
 
 var saveBtn2 = document.querySelector(".saveBtn2");
